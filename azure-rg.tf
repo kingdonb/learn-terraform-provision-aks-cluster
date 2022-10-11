@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "default_east" {
 
 resource "azurerm_resource_group" "default_west" {
   name     = "${random_pet.prefix_west.id}-rg"
-  location = "West US 2"
+  location = "East US 2"
 
   tags = {
     owner = "kingdon"
