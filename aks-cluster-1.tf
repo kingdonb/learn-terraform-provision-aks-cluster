@@ -10,6 +10,8 @@ resource "azurerm_kubernetes_cluster" "default_east" {
     vm_size         = "standard_d2_v3"
     os_disk_size_gb = 30
     enable_auto_scaling = true
+    min_count = 1
+    max_count = 5
   }
 
   # service_principal {
