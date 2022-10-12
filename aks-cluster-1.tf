@@ -1,7 +1,7 @@
 resource "azurerm_kubernetes_cluster" "default_east" {
   name                = "${random_pet.prefix_east.id}-aks"
-  location            = azurerm_resource_group.default_east.location
-  resource_group_name = azurerm_resource_group.default_east.name
+  location            = azurerm_resource_group.weave_dx_kingdon.location
+  resource_group_name = azurerm_resource_group.weave_dx_kingdon.name
   dns_prefix          = "${random_pet.prefix_east.id}-k8s"
 
   default_node_pool {
@@ -9,6 +9,7 @@ resource "azurerm_kubernetes_cluster" "default_east" {
     node_count      = 2
     vm_size         = "standard_d2_v3"
     os_disk_size_gb = 30
+    enable_auto_scaling = true
   }
 
   # service_principal {
