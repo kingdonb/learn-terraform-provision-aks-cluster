@@ -4,9 +4,9 @@ resource "azurerm_resource_group" "weave_dx_kingdon" {
 
   tags = {
   }
-  # lifecycle {
-  #   prevent_destroy = true
-  # }
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "random_pet" "prefix_east" {}
