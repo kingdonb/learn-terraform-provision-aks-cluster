@@ -3,6 +3,9 @@
 test:
 	echo "try 'make destroy-cluster-east' or 'make destroy-rg-aks-kingdon'"
 
+destroy-cluster-west:
+	terraform destroy -target azurerm_kubernetes_cluster.default_west
+
 destroy-cluster-east:
 	terraform destroy -target azurerm_kubernetes_cluster.default_east
 
