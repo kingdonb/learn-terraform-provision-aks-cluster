@@ -14,14 +14,14 @@ output "weave_dx_resource_group_name" {
   value = azurerm_resource_group.weave_dx_kingdon.name
 }
 
-output "kubernetes_cluster_name_1" {
-  value = azurerm_kubernetes_cluster.default_east.name
+# output "kubernetes_cluster_name_1" {
+#   value = azurerm_kubernetes_cluster.default_east.name
+# }
+
+output "kubernetes_cluster_name_2" {
+  value = azurerm_kubernetes_cluster.default_west.name
 }
 
-# output "kubernetes_cluster_name_2" {
-#   value = azurerm_kubernetes_cluster.default_west.name
-# }
-#
 # output "kubernetes_cluster_name_3" {
 #   value = azurerm_kubernetes_cluster.default_uk.name
 # }

@@ -1,17 +1,17 @@
 resource "azurerm_resource_group" "weave_dx_kingdon" {
   name = "aks-kingdon"
-  location = "eastus"
+  location = "eastus2"
 
   tags = {
   }
-  lifecycle {
-    prevent_destroy = true
-  }
+  # lifecycle {
+  #   prevent_destroy = true
+  # }
 }
 
 resource "random_pet" "prefix_east" {}
 
-# resource "random_pet" "prefix_west" {}
+resource "random_pet" "prefix_west" {}
 # resource "random_pet" "prefix_uk" {}
 #
 provider "azurerm" {
@@ -28,15 +28,15 @@ provider "azurerm" {
 #   }
 # }
 #
-# resource "azurerm_resource_group" "default_west" {
-#   name     = "${random_pet.prefix_west.id}-rg"
-#   location = "East US 2"
-#
-#   tags = {
-#     owner = "kingdon"
-#     environment = "development"
-#   }
-# }
+resource "azurerm_resource_group" "default_west" {
+  name     = "${random_pet.prefix_west.id}-rg"
+  location = "East US 2"
+
+  tags = {
+    owner = "kingdon"
+    environment = "development"
+  }
+}
 #
 # resource "azurerm_resource_group" "default_uk" {
 #   name     = "${random_pet.prefix_uk.id}-rg"
